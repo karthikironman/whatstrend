@@ -1,0 +1,14 @@
+.tabb {
+    width: 20rem;
+    background-color: black;
+}
+
+.tabtext {
+    border-top: 1px solid grey;
+    margin: 0;
+    overflow: hidden;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: white;
+}
