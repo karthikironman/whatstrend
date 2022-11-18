@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import "./text.scss"
-const Text = ({ text = "ha", flavour = "ha", reverse = false, explainHanaka = false, suffix = "", fontSize = 19, textAlign = 'center', margin = 0, display = "inline-block", fontWeight = 400 }) => {
+const Text = ({ text = null, flavour = "ha", reverse = false, explainHanaka = false, useBoyGirl = false, suffix = "", fontSize = 19, textAlign = 'center', margin = 0, display = "inline-block", fontWeight = 400, fontStyle="normal",textDecoration="none" }) => {
     const getHaNakaStyle = () => {
         let styleObj = {
             fontSize,
             textAlign,
             margin,
             display,
-            fontWeight
+            fontWeight,
+            fontStyle,
+            textDecoration
         }
         if (ACTUAL_FLAVOUR === "ha") {
             styleObj.color = 'blue';
@@ -19,18 +21,27 @@ const Text = ({ text = "ha", flavour = "ha", reverse = false, explainHanaka = fa
     const [ACTUAL_TEXT, setActualText] = useState('');
     const [ACTUAL_FLAVOUR, setActualFlavour] = useState('');
     useEffect(() => {
-        if (reverse) {
             if (flavour == 'ha') {
-                setActualText('naka');
-                setActualFlavour('naka')
+                if (useBoyGirl) { setActualText(reverse ? 'girl' : 'boy') }
+                else {
+                    if (text) {
+                        setActualText(text)
+                    } else {
+                        setActualText(reverse ? 'naka' : 'ha')
+                    }
+                }
+                setActualFlavour(reverse ? 'naka' : 'ha')
             } else {
-                setActualText('ha');
-                setActualFlavour('ha')
+                if (useBoyGirl) { setActualText(reverse ? 'boy' : 'girl') }
+                else {
+                    if (text) {
+                        setActualText(text);
+                    } else {
+                        setActualText(reverse ? 'ha' : 'naka');
+                    }
+                }
+                setActualFlavour(reverse ? 'ha' : 'naka')
             }
-        } else {
-            setActualText(text);
-            setActualFlavour(flavour);
-        }
     }, [])
 
     return (

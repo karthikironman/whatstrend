@@ -1,9 +1,9 @@
 import back from "./back.svg";
 import "./back.scss"
-const Backbtn = () => {
+const Backbtn = ({onClick}) => {
     return (
-        <div className="backbn-wrapper">
-            <img src={back} />
+        <div className="backbn-wrapper" onClick={onClick}>
+            <img src={back} alt="backbtn"/>
             <p>back</p>
         </div>
     )

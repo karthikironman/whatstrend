@@ -2,9 +2,11 @@ import Text from "../../widgets/text";
 import Button from "../../widgets/button";
 import "./welcome.css"
 import BtmLogo from "../../widgets/btmLogo";
-import {useSelector,useDispatch} from 'react-redux';
+import {useSelector} from 'react-redux';
+import { useNavigate } from "react-router-dom";
 
 const Welcome = () => {
+    const navigate = useNavigate();
     const name = useSelector((state)=>state.hanaka.name);
     const pool = useSelector((state)=>state.hanaka.pool);
     const age = useSelector((state)=>state.hanaka.age);
@@ -28,7 +30,7 @@ const Welcome = () => {
           What <Text flavour={flavour} text={flavour} reverse={true} explainHanaka={true} suffix="-s" fontWeight={900}/>  in <b>Cambridge Institute of Technology</b> think about <b>your physical appearance  !</b>
         </p>
         <br/>
-        <Button text="Continue" />
+        <Button text="Continue" onClick={()=>{navigate('positive')}}/>
         <BtmLogo/>
       </div>
     )

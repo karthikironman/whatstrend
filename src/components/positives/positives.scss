@@ -1,0 +1,26 @@
+.positive-wrapper{
+    background-color: white;
+    width:300px;
+    margin:0 auto;
+    padding:10px;
+    box-sizing: border-box;
+   
+    .top-positive-header{
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 10px;
+        align-items: center;
+        border-bottom: 1px solid black;
+    }
+    .positive-heading{
+        margin: 1rem 0 0 0 
+    }
+    .voted-for-category{
+        margin:0;
+    }
+    .positive-card-scroll-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

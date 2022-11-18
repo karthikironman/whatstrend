@@ -1,0 +1,17 @@
+.online-status{
+    display:flex;
+    flex-direction: column;
+    .online-status-row{
+        display:flex;
+        p{
+            margin:0;
+            position:relative;
+            top:1px;
+            font-weight: 900;
+        }
+    }
+    .online-text{
+       margin:0;
+       font-style: italic;
+    }
+}
