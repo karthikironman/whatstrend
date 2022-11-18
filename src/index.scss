@@ -4,7 +4,9 @@ body {
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: black;
+  // background: rgb(255,255,255);
+  // background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 48%, rgba(0,0,0,1) 65%, rgba(255,255,255,1) 100%);
+  background: rgb(0,0,0);
+background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 48%, rgba(255,255,255,1) 71%, rgba(0,0,0,1) 100%);
 }
-
 

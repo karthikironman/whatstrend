@@ -4,9 +4,9 @@ export const mainSlice = createSlice({
     name:'hanaka',
     initialState:{
         flavour:'naka',
-        name:'Sugumaran',
-        age:20,
-        pool:'Cambridge Institute of Technology',
+        name:'Sameetha',
+        age:24,
+        pool:'Pondicherry',
         liveHa:13,
         liveNaka:11
     },

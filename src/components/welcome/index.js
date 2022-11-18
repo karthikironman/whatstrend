@@ -19,7 +19,7 @@ const Welcome = () => {
           !
         </p>
         <p>
-          Your name is <b>{name}</b> and <b>{age}</b> Years Old studying in <b>{pool}</b> !
+          Your name is <b>{name}</b> and <b>{age}</b> Years Old living in <b>{pool}</b> !
         </p>
         <p>
           Wondering how Hanaka know this😅 ?
@@ -27,10 +27,10 @@ const Welcome = () => {
         <p>
           Hanaka know a lot of things about you 😀
           including
-          What <Text flavour={flavour} text={flavour} reverse={true} explainHanaka={true} suffix="-s" fontWeight={900}/>  in <b>Cambridge Institute of Technology</b> think about <b>your physical appearance  !</b>
+          What <Text flavour={flavour} text={flavour} reverse={true} explainHanaka={true} suffix="-s" fontWeight={900}/>  in <b>{pool}</b> think about <b>your physical appearance  !</b>
         </p>
         <br/>
-        <Button text="Continue" onClick={()=>{navigate('positive')}}/>
+        <Button text="Continue" onClick={()=>{navigate('positive')}} width={270}/>
         <BtmLogo/>
       </div>
     )
