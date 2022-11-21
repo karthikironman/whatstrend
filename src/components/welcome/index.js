@@ -15,11 +15,11 @@ const Welcome = () => {
         <div className="welcome-wrapper">
         <p>
           Hey &nbsp;
-          <Text explainHanaka={true} flavour={flavour} text={flavour} fontWeight={900} fontSize={25}/> &nbsp;
+          <Text explainHanaka={true} flavour={flavour} text={flavour} fontWeight={900} fontSize={30}/> &nbsp;
           !
         </p>
         <p>
-          Your name is <b>{name}</b> and <b>{age}</b> Years Old living in <b>{pool}</b> !
+          Your name is <b>{name}</b> and <b>{age}</b> Years Old studying in <b>{pool}</b> !
         </p>
         <p>
           Wondering how Hanaka know this😅 ?
@@ -27,7 +27,7 @@ const Welcome = () => {
         <p>
           Hanaka know a lot of things about you 😀
           including
-          What <Text flavour={flavour} text={flavour} reverse={true} explainHanaka={true} suffix="-s" fontWeight={900}/>  in <b>{pool}</b> think about <b>your physical appearance  !</b>
+          What <Text flavour={flavour}  reverse={true} explainHanaka={true} suffix="-s" fontWeight={900}/>  in <b>{pool}</b> think about <b>your physical appearance  !</b>
         </p>
         <br/>
         <Button text="Continue" onClick={()=>{navigate('positive')}} width={270}/>

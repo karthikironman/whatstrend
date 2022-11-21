@@ -16,7 +16,7 @@ const Positives = () => {
     return (
         <div className="positive-wrapper" >
             <div className="top-positive-header">
-                <BackBtn onClick={() => { navigate('/') }} />
+                <BackBtn onClick={() => { navigate('/home') }} />
                 <OnlineStatus />
             </div>
             <h1 className="positive-heading">Your Positives</h1>
@@ -44,9 +44,9 @@ const Positives = () => {
             </div>
 
 
-            <Button width={270} text="Show My Negatives 😓" />
+            <Button width={270} text="Show My Negatives 😓" onClick={()=>{navigate("/negative")}}/>
             <div className="top-positive-header">
-                <BackBtn onClick={() => { navigate('/') }} />
+                <BackBtn onClick={() => { navigate('/home') }} />
                 <OnlineStatus />
             </div>
             <BtmLogo />

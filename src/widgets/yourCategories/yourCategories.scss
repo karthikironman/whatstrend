@@ -1,0 +1,183 @@
+.your-categories-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    outline: none;
+    margin: 1rem 0;
+    padding: 1rem;
+    width: 100%;
+    position: relative;
+    height: 4rem;
+    cursor: pointer;
+    transition: all 0.5s;
+    border-radius: 8px;
+    box-sizing: border-box;
+    overflow: hidden;
+    .default-view {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+
+        .sl-no {
+            border: 2px solid black;
+            border-radius: 50%;
+            height: 30px;
+            width: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 900;
+        }
+        .tick {
+            border: 2px solid rgb(255, 255, 255);
+            border-radius: 50%;
+            height: 30px;
+            width: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: yellow;
+        }
+
+        .category-name {
+            margin-left: 1rem;
+            text-transform: capitalize;
+            font-size: 20px;
+            font-weight: 900;
+            position: relative;
+
+            .no_of_votes {
+                background-color: red;
+                position: absolute;
+                top: -1rem;
+                font-size: 10px;
+                padding: 1px 5px;
+                color: white;
+                font-weight: 900;
+                border-radius: 6px;
+            }
+
+            .selected_choice {
+                position: absolute;
+                margin: 0;
+                top: 1.5rem;
+                font-size: 15px;
+                width:280px;
+            }
+        }
+    }
+
+    .whitex {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 1;
+    }
+
+    .choice-wrapper {
+        width:100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        overflow-x: scroll;
+        margin-top: 1rem;
+        flex:none;
+        scroll-behavior: smooth; 
+    }
+    .influencer-image{
+        height: 205px;
+        width:100%;
+        outline:1px solid black;
+        background-color: white;
+        overflow: hidden;
+        img{
+            width:100%;
+
+        }
+    }
+    .minimize{
+        position:absolute;
+        font-size: 30px;
+        width:50px;
+        height:50px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color: yellow;
+        bottom:-0.5rem;
+        left:50%;
+        transform: translate(-50%,0);
+        color:black;
+    }
+}
+
+.expand {
+    height: 18rem;
+    background-color: #f2f2f2;
+    border: 2px solid black;
+}
+.expand-influencer {
+    height: 32rem;
+    background-color: #f2f2f2;
+    border: 2px solid black;
+}
+
+.basic-unit-wrapper{
+    height:220px;
+    width:120px;
+    margin-right:1rem;
+    flex:none;
+    display:flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    .arrowRow{
+        height:30px;
+        width:100%;
+        display:flex;
+        justify-content: center;
+        img{
+            height:100%;
+        }
+    }
+    .imageWrapper{
+        height:120px;
+        width:100%;
+        border:1px solid black;
+        box-sizing: border-box;
+        background-color: white;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+    .textWrapper{
+        height:65px;
+        width:100%;
+        word-wrap: break-word;
+        text-align: center;
+        padding: 0 10px;
+        box-sizing: border-box;
+        margin-top:5px;
+    }
+    
+}
+.active-unit-wrapper{
+   
+}
+
+.choice-unit-wrapper{
+   
+}
+.ha-selected{
+    background-color: #749ae6 ;
+    color:white;
+}
+.naka-selected{
+    background-color: #f98282;
+    color:white;
+}

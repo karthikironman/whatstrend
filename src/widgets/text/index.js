@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./text.scss"
-const Text = ({ text = null, flavour = "ha", reverse = false, explainHanaka = false, useBoyGirl = false, suffix = "", fontSize = 19, textAlign = 'center', margin = 0, display = "inline-block", fontWeight = 400, fontStyle="normal",textDecoration="none" }) => {
+const Text = ({ text = null, flavour = "ha", reverse = false, explainHanaka = false, useBoyGirl = false, suffix = "", fontSize = 19, textAlign = 'center', margin = 0, display = "inline-block", fontWeight = 400, fontStyle="normal",textDecoration="none",textTransform="normal" }) => {
     const getHaNakaStyle = () => {
         let styleObj = {
             fontSize,
@@ -9,7 +9,8 @@ const Text = ({ text = null, flavour = "ha", reverse = false, explainHanaka = fa
             display,
             fontWeight,
             fontStyle,
-            textDecoration
+            textDecoration,
+            textTransform
         }
         if (ACTUAL_FLAVOUR === "ha") {
             styleObj.color = 'blue';
@@ -47,7 +48,7 @@ const Text = ({ text = null, flavour = "ha", reverse = false, explainHanaka = fa
     return (
         <>
             <span style={getHaNakaStyle()}>
-                < span style={{ textTransform: 'capitalize' }}>
+                < span style={{ textTransform }}>
                     {ACTUAL_TEXT}
                 </span>
                 {suffix && <span style={{ color: 'black' }}>{suffix}</span>}
