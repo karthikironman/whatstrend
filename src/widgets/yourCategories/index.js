@@ -3,19 +3,19 @@ import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import whitex from "./whitex.svg";
 import point from "./point.svg"
-const YourCategories = ({ sl_no = 0, category_name = "category", no_of_votes = 34, uniqueKey = Math.random(),choice_data=[],select_index=null }) => {
+const YourCategories = ({ sl_no = 0, category_name = "category", no_of_votes = 34, uniqueKey = Math.random(), choice_data = [], select_index = null }) => {
 
-    const [active, setActive] = useState(select_index!=null?true:false);
+    const [active, setActive] = useState(select_index != null ? true : false);
     const [selectedChoice, setSelectedChoice] = useState(select_index)
     const [choice, setChoice] = useState(choice_data)
     const flavour = useSelector((state) => state.hanaka.flavour)
     const getWrapperClass = () => {
         let cls = 'your-categories-wrapper'
-       
-        if(active){
-          
-                cls += selectedChoice == null ? ' expand' : ' expand-influencer';
-            
+
+        if (active) {
+
+            cls += selectedChoice == null ? ' expand' : ' expand-influencer';
+
         }
         if (selectedChoice != null) {
             cls += flavour == 'ha' ? ' ha-selected' : ' naka-selected'
@@ -30,25 +30,30 @@ const YourCategories = ({ sl_no = 0, category_name = "category", no_of_votes = 3
         if (myElement) {
             const leftPos = myElement.offsetLeft;
             console.log({ leftPos })
-            document.getElementById('choice-wrapper'+uniqueKey).scrollLeft = leftPos - 150;
-
-
+            document.getElementById('choice-wrapper' + uniqueKey).scrollLeft = leftPos - 150;
         }
-
     }
     useEffect(() => scroll(), [selectedChoice])
 
     return (
         <div className={getWrapperClass()} onClick={() => { if (selectedChoice == null) setActive(!active) }}>
-            {selectedChoice != null && <img className="whitex" src={whitex} onClick={(e) => { e.stopPropagation(); setSelectedChoice(null) }} />}
+
+            {
+                selectedChoice != null &&
+                <div className="whitex" onClick={(e) => { e.stopPropagation(); setSelectedChoice(null) }}>
+                    <img src={whitex} />
+                    <p>Clear Selection</p>
+                </div>
+            }
             <div className="default-view">
-                {selectedChoice == null ?
-                    <div className="sl-no">
-                        {sl_no}
-                    </div> :
-                    <div className="tick">
-                        ✔️
-                    </div>
+                {
+                    selectedChoice == null ?
+                        <div className="sl-no">
+                            {sl_no}
+                        </div> :
+                        <div className="tick">
+                            ✔️
+                        </div>
 
                 }
 
@@ -58,23 +63,33 @@ const YourCategories = ({ sl_no = 0, category_name = "category", no_of_votes = 3
                         {no_of_votes}
                     </div>
                     <div className="selected_choice">
-                        {selectedChoice != null && choice[selectedChoice].name}
+                        {
+                            selectedChoice != null && choice[selectedChoice].name
+                        }
                     </div>
                 </div>
             </div>
 
-            <div className="choice-wrapper" id={"choice-wrapper"+uniqueKey}>
-                {
-                    choice.map((x, index) => {
-                        return <ChoiceUnit name={x.name} key={index} index={index} img={x.img} selectedChoice={selectedChoice} setSelectedChoice={setSelectedChoice} uniqueKey={uniqueKey} />
-                    })
-                }
-            </div>
-          { selectedChoice!=null &&  <div className="influencer-image">
-               <img src={choice_data[selectedChoice].influencer}/>
-            </div> }
-            {(active && selectedChoice == null) &&
-                <div className="minimize" onClick={() => { setActive(false) }}>⬆</div>}
+
+            {
+                selectedChoice != null && <div className="influencer-image">
+                    <img src={choice_data[selectedChoice].influencer} />
+                </div>
+            }
+            {
+                active &&
+                <div className="choice-wrapper" id={"choice-wrapper" + uniqueKey}>
+                    {
+                        choice.map((x, index) => {
+                            return <ChoiceUnit name={x.name} key={index + 'choice' + uniqueKey} index={index} img={x.img} selectedChoice={selectedChoice} setSelectedChoice={setSelectedChoice} uniqueKey={uniqueKey} />
+                        })
+                    }
+                </div>
+            }
+            {
+                (active && selectedChoice == null) &&
+                <div className="minimize" onClick={() => { setActive(false) }}>⬆</div>
+            }
         </div>
     )
 }
@@ -108,7 +123,7 @@ const ChoiceUnit = ({ name, img, selectedChoice, setSelectedChoice, index, uniqu
     }
 
     return (
-        <div className="basic-unit-wrapper" id={isActive() ? 'selected-ch-123' + uniqueKey : Math.random()} onClick={(e) => { e.stopPropagation(); console.log('clicked',uniqueKey); setSelectedChoice(index) }}>
+        <div className="basic-unit-wrapper" id={isActive() ? 'selected-ch-123' + uniqueKey : Math.random()} onClick={(e) => { e.stopPropagation(); console.log('clicked', uniqueKey); setSelectedChoice(index) }}>
             <div className="arrowRow">
                 {isActive() && <img src={point} />}
             </div>
