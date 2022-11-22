@@ -23,6 +23,7 @@ const Positives = () => {
             <p className="voted-for-category"> {votedForYourCategory} <Text flavour={flavour} text={flavour} reverse={true} useBoyGirl={true} suffix="-s" fontWeight={900} /> Voted</p>
             <div className="positive-card-scroll-wrapper">
                 <PositiveCard
+                   unlocked = {false}
                     index={1}
                     category_name="Hip Shape"
                     choice_name="Curvy"
@@ -30,12 +31,14 @@ const Positives = () => {
                     percentage='97'
                     />
                 <PositiveCard
+                 unlocked = {false}
                     index={2}
                     category_name="Eyes Color"
                     choice_name="Black"
                     choice_img="https://www.pngmart.com/files/15/Vector-Eyes-Transparent-PNG.png"
                     percentage='75' />
                 <PositiveCard
+                 unlocked = {true}
                     index={3}
                     category_name="Hair"
                     choice_name="curly"

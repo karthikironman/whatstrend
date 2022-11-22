@@ -3,9 +3,9 @@ import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import whitex from "./whitex.svg";
 import point from "./point.svg"
-const YourCategories = ({ sl_no = 0, category_name = "category", no_of_votes = 34, uniqueKey = Math.random(), choice_data = [], select_index = null }) => {
+const YourCategories = ({ sl_no = null, category_name = "category", no_of_votes = 34, hide_no_of_votes = false, uniqueKey = Math.random(), choice_data = [], select_index = null, defaultExpand = false, callback = (e) => { console.log(e) }, hideClear = false }) => {
 
-    const [active, setActive] = useState(select_index != null ? true : false);
+    const [active, setActive] = useState(select_index != null || defaultExpand ? true : false);
     const [selectedChoice, setSelectedChoice] = useState(select_index)
     const [choice, setChoice] = useState(choice_data)
     const flavour = useSelector((state) => state.hanaka.flavour)
@@ -33,14 +33,18 @@ const YourCategories = ({ sl_no = 0, category_name = "category", no_of_votes = 3
             document.getElementById('choice-wrapper' + uniqueKey).scrollLeft = leftPos - 150;
         }
     }
+    const handleSelectedChoice = (e) => {
+        setSelectedChoice(e);
+        callback(e)
+    }
     useEffect(() => scroll(), [selectedChoice])
 
     return (
         <div className={getWrapperClass()} onClick={() => { if (selectedChoice == null) setActive(!active) }}>
 
             {
-                selectedChoice != null &&
-                <div className="whitex" onClick={(e) => { e.stopPropagation(); setSelectedChoice(null) }}>
+                selectedChoice != null && !hideClear &&
+                <div className="whitex" onClick={(e) => { e.stopPropagation(); setSelectedChoice(null); callback('remove') }}>
                     <img src={whitex} />
                     <p>Clear Selection</p>
                 </div>
@@ -48,9 +52,10 @@ const YourCategories = ({ sl_no = 0, category_name = "category", no_of_votes = 3
             <div className="default-view">
                 {
                     selectedChoice == null ?
-                        <div className="sl-no">
+                        <>{sl_no != null && <div className="sl-no">
                             {sl_no}
-                        </div> :
+                        </div>}</>
+                        :
                         <div className="tick">
                             ✔️
                         </div>
@@ -59,9 +64,10 @@ const YourCategories = ({ sl_no = 0, category_name = "category", no_of_votes = 3
 
                 <div className="category-name">
                     {category_name}
-                    <div className="no_of_votes">
+                    {!hide_no_of_votes &&  <div className="no_of_votes">
                         {no_of_votes}
-                    </div>
+                    </div>}
+                   
                     <div className="selected_choice">
                         {
                             selectedChoice != null && choice[selectedChoice].name
@@ -81,13 +87,13 @@ const YourCategories = ({ sl_no = 0, category_name = "category", no_of_votes = 3
                 <div className="choice-wrapper" id={"choice-wrapper" + uniqueKey}>
                     {
                         choice.map((x, index) => {
-                            return <ChoiceUnit name={x.name} key={index + 'choice' + uniqueKey} index={index} img={x.img} selectedChoice={selectedChoice} setSelectedChoice={setSelectedChoice} uniqueKey={uniqueKey} />
+                            return <ChoiceUnit name={x.name} key={index + 'choice' + uniqueKey} index={index} img={x.img} selectedChoice={selectedChoice} setSelectedChoice={handleSelectedChoice} uniqueKey={uniqueKey} />
                         })
                     }
                 </div>
             }
             {
-                (active && selectedChoice == null) &&
+                (active && selectedChoice == null && defaultExpand == false) &&
                 <div className="minimize" onClick={() => { setActive(false) }}>⬆</div>
             }
         </div>

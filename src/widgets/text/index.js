@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./text.scss"
-const Text = ({ text = null, flavour = "ha", reverse = false, explainHanaka = false, useBoyGirl = false, suffix = "", fontSize = 19, textAlign = 'center', margin = 0, display = "inline-block", fontWeight = 400, fontStyle="normal",textDecoration="none",textTransform="normal" }) => {
+const Text = ({ text = null, flavour = "ha", reverse = false, explainHanaka = false, useBoyGirl = false, suffix = "", fontSize = 19, textAlign = 'center', margin = 0, display = "inline-block", fontWeight = 400, fontStyle="normal",textDecoration="none",textTransform="normal",suffixColor='black' }) => {
     const getHaNakaStyle = () => {
         let styleObj = {
             fontSize,
@@ -51,9 +51,10 @@ const Text = ({ text = null, flavour = "ha", reverse = false, explainHanaka = fa
                 < span style={{ textTransform }}>
                     {ACTUAL_TEXT}
                 </span>
-                {suffix && <span style={{ color: 'black' }}>{suffix}</span>}
+                {suffix && <span style={{ color: suffixColor }}>{suffix}</span>}
                 {explainHanaka &&
                     <ExplainHanaka
+                    suffixColor={suffixColor}
                         flavour={ACTUAL_FLAVOUR}
                         suffix={suffix} />}
             </span>
@@ -61,11 +62,11 @@ const Text = ({ text = null, flavour = "ha", reverse = false, explainHanaka = fa
 
     )
 }
-const ExplainHanaka = ({ flavour = "ha", suffix = "" }) => {
+const ExplainHanaka = ({ flavour = "ha", suffix = "",suffixColor }) => {
     let content = flavour === 'ha' ? 'boy' : 'girl';
     content += suffix;
     content = "(" + content + ")";
-    const explainHanakaStyle = { display: 'inline', color: 'black', fontSize: 15 }
+    const explainHanakaStyle = { display: 'inline', color: suffixColor, fontSize: 15 }
     return <span style={explainHanakaStyle}><i>{content}</i></span>
 }
 export default Text;

@@ -1,0 +1,26 @@
+.vote-page-wrapper{
+    width: 400px;
+    min-height: calc(100vh - 1rem);
+    background-color: white;
+    margin: 0 auto 1rem auto;
+    padding:1rem;
+    box-sizing: border-box;
+    .top-vote-header{
+        width:100%;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 10px;
+        align-items: center;
+        border-bottom: 1px solid black;
+    }
+    .question{
+        margin:1rem 0 0 0;
+    }
+    .afterVote{
+        text-align: center;
+        p{
+            margin:0;
+            font-style:italic;
+        }
+    }
+}

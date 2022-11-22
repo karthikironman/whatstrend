@@ -11,6 +11,7 @@ import Positives from "./components/positives";
 import Negatives from "./components/negatives";
 import Home from "./components/home";
 import Categories from "./components/categories";
+import VotePage from "./components/votePage"
 const App = () => {
   return (
 
@@ -21,6 +22,7 @@ const App = () => {
       <Route path="/positive" element = {<Positives/>} />
       <Route path="/negative" element = {<Negatives/>} />
       <Route path="/category" element = {<Categories/>}/>
+      <Route path="/vote/:redirect" element = {<VotePage/>}/>
     </Routes>
    </Router>
 

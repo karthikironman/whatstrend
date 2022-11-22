@@ -2,7 +2,7 @@ import "./blinkText.scss";
 import { BarLoader } from "react-spinners";
 import {  CSSProperties } from "react";
 
-const BlinkText = ({bar=true, barWidth=100 , text, fontWeight = 900, fontSize = 20,fontStyle="normal"}) => {
+const BlinkText = ({bar=true, barWidth=100 , text, fontWeight = 900, fontSize = 20,fontStyle="normal",textAlign="left"}) => {
     const override = {
         background: "white",
         borderRadius:5,
@@ -12,7 +12,8 @@ const BlinkText = ({bar=true, barWidth=100 , text, fontWeight = 900, fontSize = 
         return {
             fontWeight,
             fontSize,
-            fontStyle
+            fontStyle,
+            textAlign
         }
       }
     return (<>
