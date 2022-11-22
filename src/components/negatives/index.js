@@ -23,10 +23,10 @@ const Positives = () => {
             <h1 className="negative-heading">Your Negatives</h1>
             <p className="voted-for-category"> {votedForYourCategory} <Text flavour={flavour} text={flavour} reverse={true} useBoyGirl={true} suffix="-s" fontWeight={900} /> Voted</p>
             <div className="negative-card-scroll-wrapper">
-                <NegativeCard category="Height" choice="Short" percentage={10}/>
+                <NegativeCard unlocked={true} category="Height" choice="Short" percentage={10}/>
                 <NegativeCard category="Voice tone" choice="Boyish" percentage={8}/>
                 <NegativeCard category="Weight" choice="Obese" percentage={9.8}/>
-                <NegativeCard category="Nose shape" choice="Round" percentage={11.11}/>
+                <NegativeCard unlocked={true} category="Nose shape" choice="Round" percentage={11.11}/>
                 <NegativeCard category="Eyebrows" choice="Steep arch" percentage={10}/>
                 <NegativeCard category="Hair Color" choice="Red" percentage={2}/>
             </div>

@@ -1,8 +1,43 @@
 {
     "ha":[
+        {
+            "name":"beard",
+            "select_index":0,
+            "choice":[
+                {
+                    "name":"Clean shave (Chevron)",
+                    "img":"https://stylesatlife.com/wp-content/uploads/2019/09/5-Chevron-Style.jpg.webp",
+                    "influencer":"https://th.bing.com/th/id/R.80784a23a43272cf572a2e5cd1093407?rik=G7jGgeDeJpGpaQ&riu=http%3a%2f%2fs3.amazonaws.com%2fnext-management-production%2fassets%2fimages%2f504588%2fmedium_landscape.JPG%3f1467234441&ehk=eGVs6JexDdIAmi0pSAZzxfLQfZINJxWvffs%2fkb5bhHs%3d&risl=&pid=ImgRaw&r=0"
+                },
+                {
+                    "name":"Anchor",
+                    "img":"https://stylesatlife.com/wp-content/uploads/2019/09/4-Anchor-Style.jpg.webp",
+                    "influencer":"https://img.etimg.com/thumb/msid-75194748,width-640,height-480,imgsize-300190,resizemode-4/anchor-beard.jpg"
+                },
+                {
+                    "name":"Klingon",
+                    "img":"https://stylesatlife.com/wp-content/uploads/2019/09/10-Klingon-Style.jpg.webp",
+                    "influencer":"https://i.pinimg.com/originals/10/15/96/1015969deda37e0d8328c67a799127fb.jpg"
+                },{
+                    "name":"Balbo",
+                    "img":"https://stylesatlife.com/wp-content/uploads/2019/09/11-Balbo-Style.jpg.webp",
+                    "influencer":"https://stylesatlife.com/wp-content/uploads/2018/02/Jawline-Balbo-beard-style.jpg.webp"
+                },
+                {
+                    "name":"Lumberjack",
+                    "img":"https://stylesatlife.com/wp-content/uploads/2019/09/12-Lumberjack-Style.jpg.webp",
+                    "influencer":"http://cdn.shopify.com/s/files/1/0477/0345/7956/articles/young-handsome-bearded-man-with-long-beard-moustache_120494-1.jpg?v=1622787469"
+                },
+                {
+                    "name":"Tight",
+                    "img":"https://stylesatlife.com/wp-content/uploads/2019/09/14-Tight-Style.jpg.webp",
+                    "influencer":"https://i.pinimg.com/564x/c4/04/cd/c404cd624f849bcbf21717db135708f3.jpg"
+                }
+            ]
+          },
       {
         "name":"height",
-        "select_index":0,
+        "select_index":null,
         "choice":[
             {
                 "name":"tall",
@@ -52,44 +87,6 @@
             },
             {
                 "name":"athletic",
-                "img":"",
-                "influencer":""
-            }
-        ]
-      },
-      {
-        "name":"beard",
-        "select_index":null,
-        "choice":[
-            {
-                "name":"stubble beard",
-                "img":"",
-                "influencer":""
-            },
-            {
-                "name":"heavy stubble beard",
-                "img":"",
-                "influencer":""
-            },{
-                "name":"long full beard",
-                "img":"",
-                "influencer":""
-            },
-            {
-                "name":"pointed beard",
-                "img":"",
-                "influencer":""
-            },
-            {
-                "name":"heightened cheekbones",
-                "img":"",
-                "influencer":""
-            },{
-                "name":"full facial fuzz",
-                "img":"",
-                "influencer":""
-            },{
-                "name":"full throttle beard",
                 "img":"",
                 "influencer":""
             }

@@ -14,7 +14,7 @@ const VotePage = (props) => {
     const flavour = useSelector((state) => state.hanaka.flavour);
     const category = "Height";
     const ha_data = data.naka[0];
-    const naka_data = data.ha[2];
+    const naka_data = data.ha[0];
     const [gotResponse, setGotResponse] = useState(false);
     const {redirect}  = useParams();
     const handleAfterVoting = (data) => {

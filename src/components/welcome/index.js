@@ -11,6 +11,7 @@ const Welcome = () => {
     const pool = useSelector((state)=>state.hanaka.pool);
     const age = useSelector((state)=>state.hanaka.age);
     const flavour = useSelector((state)=>state.hanaka.flavour);
+    const poolRelation = useSelector((state)=>state.hanaka.poolRelation)
     return (
         <div className="welcome-wrapper">
         <p>
@@ -19,7 +20,7 @@ const Welcome = () => {
           !
         </p>
         <p>
-          Your name is <b>{name}</b> and <b>{age}</b> Years Old studying in <b>{pool}</b> !
+          Your name is <b>{name}</b> and <b>{age}</b> Years Old {poolRelation} in <b>{pool}</b> !
         </p>
         <p>
           Wondering how Hanaka know this😅 ?
