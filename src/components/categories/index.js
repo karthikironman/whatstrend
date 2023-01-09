@@ -12,7 +12,7 @@ const Categories = () => {
     <div className="category-wrapper">
 
       <div className="category-header">
-        <BackBtn onClick={() => { navigate("/home") }} />
+        <BackBtn onClick={() => { navigate("/") }} />
         <p className="category-heading">Your Categories</p>
       </div>
       {

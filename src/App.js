@@ -1,5 +1,4 @@
 import "./App.scss";
-// import TestNavigation from "./testNavigation";
 import {
   BrowserRouter as Router,
   Routes,
@@ -17,8 +16,8 @@ const App = () => {
 
    <Router>
     <Routes>
-      <Route path="/" element = {<Welcome/>} />
-      <Route path="/home" element = {<Home/>} />
+      <Route path="/welcome/:magic_id" element = {<Welcome/>} />
+      <Route path="/" element = {<Home/>} />
       <Route path="/positive" element = {<Positives/>} />
       <Route path="/negative" element = {<Negatives/>} />
       <Route path="/category" element = {<Categories/>}/>

@@ -37,7 +37,7 @@ const Positives = () => {
            
             <div className="top-negative-header">
                 <BackBtn onClick={() => { navigate('/positive') }} />
-                <HomeBtn onClick={()=>{navigate('/home')}}/>
+                <HomeBtn onClick={()=>{navigate('/')}}/>
                 <OnlineStatus />
             </div>
             <BtmLogo />
